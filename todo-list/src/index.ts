@@ -36,3 +36,9 @@ function getUserTodos(userId: number): Todo[] {
 }
 
 console.log(getUserTodos(10))
+
+function error(message: string) : never {
+  throw new Error(message)
+}
+
+error("Errore")
