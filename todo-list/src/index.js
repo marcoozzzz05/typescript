@@ -26,3 +26,7 @@ function assignTodoToUser(todoId, userId) {
 assignTodoToUser(1, 10);
 assignTodoToUser(2, 12);
 console.log(todos);
+function getUserTodos(userId) {
+    return todos.filter(todo => todo.userId === userId);
+}
+console.log(getUserTodos(10));
