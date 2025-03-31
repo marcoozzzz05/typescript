@@ -3,11 +3,12 @@ import {Todo} from  "./types"
 const todos: Todo[] = [];
 let todoCounter = 1;
 
-function addTodo(title: string): void {
+function addTodo(title: string, metadata?: any): void {
     const newTodo: Todo = {
       id: todoCounter++, 
       title: title,
       completed: false,
+      metadata,
     };
 
     todos.push(newTodo);

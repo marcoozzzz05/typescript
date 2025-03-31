@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const todos = [];
 let todoCounter = 1;
-function addTodo(title) {
+function addTodo(title, metadata) {
     const newTodo = {
         id: todoCounter++,
         title: title,
         completed: false,
+        metadata,
     };
     todos.push(newTodo);
 }
