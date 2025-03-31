@@ -30,3 +30,17 @@ function getUserTodos(userId) {
     return todos.filter(todo => todo.userId === userId);
 }
 console.log(getUserTodos(10));
+function error(message) {
+    throw new Error(message);
+}
+//error("Errore")
+function parseInput(input) {
+    if (typeof input === "string") {
+        return input;
+    }
+    if (typeof input === "number") {
+        return input.toString();
+    }
+    return error("Errore! L'Input deve essere una stringa o un numero");
+}
+console.log(parseInput("ciao"));

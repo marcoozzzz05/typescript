@@ -41,4 +41,16 @@ function error(message: string) : never {
   throw new Error(message)
 }
 
-error("Errore")
+//error("Errore")
+
+function parseInput(input: unknown): string {
+  if(typeof input === "string") {
+    return input
+  }
+  if(typeof input === "number") {
+    return input.toString()
+  }
+  return error("Errore! L'Input deve essere una stringa o un numero")  
+}
+
+console.log(parseInput("ciao"))
