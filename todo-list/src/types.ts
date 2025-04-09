@@ -11,3 +11,7 @@ export interface User {
     name: string;
     email?: string
 }
+
+export interface TodoWithMetadata extends Todo {
+    metadata: any;
+}
