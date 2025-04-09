@@ -3,7 +3,7 @@ import {Todo} from  "./types"
 const todos: Todo[] = [];
 let todoCounter = 1;
 
-function addTodo(title: string, metadata?: any): void {
+function addTodo(title: string, metadata?: string | object): void {
     const newTodo: Todo = {
       id: todoCounter++, 
       title: title,
