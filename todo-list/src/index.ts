@@ -55,3 +55,18 @@ function parseInput(input: unknown): string {
 }
 
 console.log(parseInput("ciao"))
+
+function updateTodo(todoId: number, updatedFields: Partial<Todo>): void {
+  const todo = todos.find(todo => todo.id === todoId);
+  if (todo) {
+    Object.assign(todo, updatedFields);
+    console.log(`Todo ${todoId} aggiornato:`, todo);
+  } else {
+    console.log(`Todo con id ${todoId} non trovato`);
+  }
+}
+
+updateTodo(1, { title: "Todo1 aggiornato", completed: true });
+updateTodo(2, { metadata: "Nuovo metadata" });
+
+console.log(todos);
