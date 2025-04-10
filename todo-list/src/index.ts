@@ -70,3 +70,15 @@ updateTodo(1, { title: "Todo1 aggiornato", completed: true });
 updateTodo(2, { metadata: "Nuovo metadata" });
 
 console.log(todos);
+
+function getTodoSummary(todo: Todo): [string,boolean] {
+  return [todo.title,todo.completed]
+}
+
+const testTodo: Todo = {
+  id: 1,
+  title: "boh",
+  completed: true,
+}
+
+console.log(getTodoSummary(testTodo))
