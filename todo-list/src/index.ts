@@ -1,4 +1,4 @@
-import {Todo} from  "./types"
+import {Todo,User,Project} from  "./types"
 
 const todos: Todo[] = [];
 let todoCounter = 1;
@@ -82,3 +82,23 @@ const testTodo: Todo = {
 }
 
 console.log(getTodoSummary(testTodo))
+
+function createProject(id: number, name: string, users: User[], todos: Todo[]): Project {
+  return {
+    id,
+    name,
+    users,
+    todos
+  };
+}
+
+const todo: Todo = {id: 1, title: "prova-project", completed: false }
+const user: User = {
+  id: 1,
+  name: "marco",
+  email: "marco@gmail.com",
+  todos: [todo]
+};
+
+const project = createProject(1,"project",[user],[todo])
+console.log(project)
