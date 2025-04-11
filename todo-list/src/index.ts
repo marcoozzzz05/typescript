@@ -1,4 +1,5 @@
 import {Todo,User,Project, TodoStatus} from  "./types"
+import { User1 } from "./User1";
 
 const todos: Todo[] = [];
 let todoCounter = 1;
@@ -115,3 +116,11 @@ function updateTodoStatus(todoId: number, newStatus: TodoStatus): boolean {
 }
 
 updateTodoStatus(1,TodoStatus.Completed)
+
+const user1 = new User1(1, "marco", "marco@gmail.it")
+const todo1: Todo = {id:1, title:'boh', completed:false, status:TodoStatus.Pending }
+const user2 = new User1(2, "ciao", "ciao@gmail.it")
+const todo2: Todo = {id:2, title:'boh', completed:false, status:TodoStatus.Pending }
+
+user1.addTodo(todo1);
+user2.addTodo(todo2);
