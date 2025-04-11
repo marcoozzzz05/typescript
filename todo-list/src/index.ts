@@ -1,4 +1,4 @@
-import {Todo,User,Project} from  "./types"
+import {Todo,User,Project, TodoStatus} from  "./types"
 
 const todos: Todo[] = [];
 let todoCounter = 1;
@@ -9,6 +9,7 @@ function addTodo(title: string, metadata?: string | object): void {
       title: title,
       completed: false,
       metadata,
+      status: TodoStatus.Pending
     };
 
     todos.push(newTodo);
@@ -79,6 +80,7 @@ const testTodo: Todo = {
   id: 1,
   title: "boh",
   completed: true,
+  status: TodoStatus.Pending
 }
 
 console.log(getTodoSummary(testTodo))
@@ -92,7 +94,7 @@ function createProject(id: number, name: string, users: User[], todos: Todo[]): 
   };
 }
 
-const todo: Todo = {id: 1, title: "prova-project", completed: false }
+const todo: Todo = {id: 1, title: "prova-project", completed: false, status: TodoStatus.Pending }
 const user: User = {
   id: 1,
   name: "marco",
