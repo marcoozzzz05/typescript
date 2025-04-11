@@ -1,6 +1,6 @@
 import { Todo } from "./types";
 
-export class User {
+export class User1 {
     id: number;
     name: string;
     email?: string;
