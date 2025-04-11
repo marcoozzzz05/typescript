@@ -104,3 +104,14 @@ const user: User = {
 
 const project = createProject(1,"project",[user],[todo])
 console.log(project)
+
+function updateTodoStatus(todoId: number, newStatus: TodoStatus): boolean {
+  const todo = todos.find(t => t.id === todoId);
+  if (!todo) {
+    return false; 
+  }
+  todo.status = newStatus;
+  return true; 
+}
+
+updateTodoStatus(1,TodoStatus.Completed)
