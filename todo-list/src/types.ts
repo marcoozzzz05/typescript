@@ -30,3 +30,5 @@ export enum TodoStatus {
     InProgress,
     Completed,
 }
+
+export type PartialTodo = Partial<Todo>;

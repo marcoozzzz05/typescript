@@ -1,5 +1,6 @@
 import {Todo,User,Project, TodoStatus} from  "./types"
 import { User1 } from "./User1";
+import { PartialTodo } from "./types";
 
 const todos: Todo[] = [];
 let todoCounter = 1;
@@ -124,3 +125,13 @@ const todo2: Todo = {id:2, title:'boh', completed:false, status:TodoStatus.Pendi
 
 user1.addTodo(todo1);
 user2.addTodo(todo2);
+
+function updatePartialTodo(todoId: number, updates: PartialTodo): boolean {
+  const todo = todos.find(t => t.id === todoId);
+  if (!todo) return false;
+
+  Object.assign(todo, updates); 
+  return true;
+}
+
+updatePartialTodo(1,{title:"boh", completed: true})
