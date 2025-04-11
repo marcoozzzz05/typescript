@@ -1,6 +1,6 @@
 import {Todo,User,Project, TodoStatus} from  "./types"
 import { User1 } from "./User1";
-import { PartialTodo } from "./types";
+import { PartialTodo, TodoRecord } from "./types";
 
 const todos: Todo[] = [];
 let todoCounter = 1;
@@ -135,3 +135,10 @@ function updatePartialTodo(todoId: number, updates: PartialTodo): boolean {
 }
 
 updatePartialTodo(1,{title:"boh", completed: true})
+
+function convertArrayToRecord(todos: Todo[]): TodoRecord {
+  return todos.reduce((record: TodoRecord, todo) => {
+    record[todo.id] = todo;
+    return record;
+  }, {});
+}
