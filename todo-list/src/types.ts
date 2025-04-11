@@ -4,6 +4,7 @@ export interface Todo {
     completed: boolean;
     userId?: number;
     metadata?: any;
+    status: TodoStatus;
 }
 
 export interface User {
@@ -22,4 +23,10 @@ export interface Project {
     name: string;
     users: User[];
     todos: Todo[];
+}
+
+enum TodoStatus {
+    Pending,
+    InProgress,
+    Completed,
 }
