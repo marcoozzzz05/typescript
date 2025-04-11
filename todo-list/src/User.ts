@@ -1,7 +1,10 @@
+import { Todo } from "./types";
+
 export class User {
     id: number;
     name: string;
     email?: string;
+    todos: Todo[] = [];
   
     constructor(id: number, name: string, email?: string) {
       this.id = id;
@@ -9,6 +12,10 @@ export class User {
       if (email) {
         this.email = email;
       }
+    }
+
+    addTodo(todo: Todo): void {
+      this.todos.push(todo);
     }
 }
   
